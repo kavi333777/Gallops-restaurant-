@@ -1,1 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Gallops Restaurant | Mumbai</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #f7f3ed;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* HEADER */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #17130f;
+  color: white;
+  padding: 18px 20px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.tagline {
+  color: #d6b36a;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-top: 3px;
+}
+
+nav {
+  margin-top: 14px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 9px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+
+  background:
+    linear-gradient(rgba(20,15,10,.72), rgba(20,15,10,.72)),
+    radial-gradient(circle at center, #806b4b, #241b13);
+
+  color: white;
+}
+
+.hero-content {
+  max-width: 750px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #eee;
+}
+
+.rating {
+  margin-bottom: 25px;
+  font-family: Arial, sans-serif;
+}
+
+.stars {
+  color: #d6b36a;
+  font-size: 22px;
+}
+
+.button {
+  display: inline-block;
+  background: #c49a4a;
+  color: white;
+  text-decoration: none;
+  padding: 13px 27px;
+  margin: 5px;
+  border-radius: 3px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.button:hover {
+  background: #a98038;
+}
+
+/* SECTIONS */
+
+section {
+  padding: 70px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  color: #2a2118;
+}
+
+.section-title p {
+  font-family: Arial, sans-serif;
+  color: #777;
+  margin-top: 8px;
+}
+
+/* ABOUT */
+
+.about {
+  text-align: center;
+}
+
+.about-text {
+  max-width: 750px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  color: #555;
+  font-size: 16px;
+}
+
+/* FEATURES */
+
+.features {
+  background: #211a13;
+  color: white;
+  max-width: none;
+}
+
+.feature-container {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.feature {
+  width: 210px;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+.feature-icon {
+  font-size: 35px;
+  margin-bottom: 12px;
+}
+
+.feature h3 {
+  color: #d6b36a;
+  margin-bottom: 7px;
+}
+
+.feature p {
+  font-family: Arial, sans-serif;
+  color: #ddd;
+  font-size: 14px;
+}
+
+/* MENU */
+
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.menu-card {
+  background: white;
+  width: 300px;
+  padding: 28px;
+  border: 1px solid #e4ddd2;
+  box-shadow: 0 8px 25px rgba(0,0,0,.06);
+  border-radius: 4px;
+}
+
+.menu-card h3 {
+  color: #8b672d;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.menu-card p {
+  font-family: Arial, sans-serif;
+  color: #555;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+/* POPULAR DISHES */
+
+.dishes {
+  background: #eee7dc;
+  max-width: none;
+}
+
+.dishes-container {
+  max-width: 1050px;
+  margin: auto;
+}
+
+.dish-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.dish {
+  background: white;
+  padding: 18px 22px;
+  border-radius: 4px;
+  width: 250px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.06);
+}
+
+.dish strong {
+  display: block;
+  color: #32261b;
+  margin-bottom: 4px;
+}
+
+.dish span {
+  color: #9a793d;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+}
+
+/* REVIEWS */
+
+.review-box {
+  max-width: 750px;
+  margin: auto;
+  background: white;
+  padding: 35px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,.07);
+}
+
+.review-box .big-rating {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.review-box .stars {
+  font-size: 25px;
+  margin: 5px 0 15px;
+}
+
+.review-box p {
+  font-family: Arial, sans-serif;
+  color: #555;
+}
+
+/* CONTACT */
+
+.contact {
+  max-width: none;
+  background: #17130f;
+  color: white;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.contact-info {
+  font-family: Arial, sans-serif;
+  line-height: 2;
+  color: #ddd;
+}
+
+.contact-info strong {
+  color: #d6b36a;
+}
+
+.contact .button {
+  margin-top: 20px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #0d0b09;
+  color: #999;
+  text-align: center;
+  padding: 25px 15px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  nav a {
+    margin: 0 4px;
+    font-size: 11px;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+  }
+
+  .menu-card,
+  .dish {
+    width: 100%;
+    max-width: 340px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">GALLOPS</div>
+  <div class="tagline">RESTAURANT · MUMBAI</div>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#menu">MENU</a>
+    <a href="#reviews">REVIEWS</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
+
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+
+  <div class="hero-content">
+
+    <div class="rating">
+      <span class="stars">★★★★★</span>
+      <br>
+      4.4 · 4,413 Reviews
+    </div>
+
+    <h1>Gallops Restaurant</h1>
+
+    <p>
+      Fine dining, timeless charm and memorable moments
+      beside the Mahalaxmi Racecourse.
+    </p>
+
+    <a class="button" href="#menu">EXPLORE MENU</a>
+
+    <a class="button" href="tel:+912269600111">CALL NOW</a>
+
+  </div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="section-title">
+    <h2>Welcome to Gallops</h2>
+    <p>A dining experience in the heart of Mumbai</p>
+  </div>
+
+  <div class="about">
+
+    <p class="about-text">
+      Gallops Restaurant offers a fine dining experience inside
+      the historic Mahalaxmi Racecourse. With its charming
+      atmosphere, indoor and outdoor seating, and views of the
+      racecourse, Gallops is a destination for memorable meals
+      and special occasions.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<div class="features">
+
+  <div class="feature-container">
+
+    <div class="feature">
+      <div class="feature-icon">🍽️</div>
+      <h3>Fine Dining</h3>
+      <p>Enjoy a refined dining experience with a wide selection of dishes.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🌿</div>
+      <h3>Outdoor Seating</h3>
+      <p>Relax outdoors while enjoying the surroundings of the racecourse.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🏛️</div>
+      <h3>Private Dining</h3>
+      <p>A private dining room is available for special occasions.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🏇</div>
+      <h3>Racecourse Views</h3>
+      <p>Experience the unique setting inside Mahalaxmi Racecourse.</p>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- MENU -->
+
+<section id="menu">
+
+  <div class="section-title">
+    <h2>Menu Highlights</h2>
+    <p>A selection of popular dishes</p>
+  </div>
+
+  <div class="menu-grid">
+
+    <div class="menu-card">
+      <h3>Popular Starters</h3>
+      <p>Galouti Kebab</p>
+      <p>Chicken Dori Kabab</p>
+      <p>Chicken Kalimirchi Kabab</p>
+      <p>Saag Burrata</p>
+    </div>
+
+    <div class="menu-card">
+      <h3>Main Course</h3>
+      <p>Chicken a La Kiev</p>
+      <p>Braised Lamb Shanks</p>
+      <p>Paneer Steak Paprika</p>
+      <p>Yakhni Pulao</p>
+    </div>
+
+    <div class="menu-card">
+      <h3>Desserts</h3>
+      <p>Baked Alaska</p>
+      <p>Baked Jalebi Cheesecake</p>
+      <p>Caramel Custard</p>
+      <p>Belgian Chocolate Mousse</p>
+      <p>Flambéed Malpua with Rabri</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- POPULAR DISHES -->
+
+<div class="dishes">
+
+  <section>
+
+    <div class="section-title">
+      <h2>More Favourites</h2>
+      <p>Popular choices from the menu</p>
+    </div>
+
+    <div class="dish-list">
+
+      <div class="dish">
+        <strong>Fondue</strong>
+        <span>POPULAR</span>
+      </div>
+
+      <div class="dish">
+        <strong>Butter Naan</strong>
+        <span>POPULAR</span>
+      </div>
+
+      <div class="dish">
+        <strong>Churra Paratha</strong>
+        <span>POPULAR</span>
+      </div>
+
+      <div class="dish">
+        <strong>Chocolate Brownie with Vanilla Ice Cream</strong>
+        <span>DESSERT</span>
+      </div>
+
+      <div class="dish">
+        <strong>Baileys Caramel Cloud</strong>
+        <span>DESSERT</span>
+      </div>
+
+      <div class="dish">
+        <strong>Blue Lagoon</strong>
+        <span>BEVERAGE</span>
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+<!-- REVIEWS -->
+
+<section id="reviews">
+
+  <div class="section-title">
+    <h2>What Diners Say</h2>
+    <p>Based on thousands of reviews</p>
+  </div>
+
+  <div class="review-box">
+
+    <div class="big-rating">4.4</div>
+
+    <div class="stars">★★★★★</div>
+
+    <p>
+      <strong>4,413 reviews</strong>
+    </p>
+
+    <br>
+
+    <p>
+      Diners highlight the delicious food, charming nostalgic
+      ambience and the choice of indoor and outdoor seating
+      overlooking the Mahalaxmi Racecourse.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<div class="contact" id="contact">
+
+  <section>
+
+    <h2>Visit Gallops</h2>
+
+    <div class="contact-info">
+
+      <p>
+        <strong>📍 Address</strong><br>
+        Gate No. 1, Inside Mahalaxmi Racecourse,<br>
+        Via Keshavrao Khadye Marg,<br>
+        Royal Western India Turf Club,<br>
+        Mahalakshmi, Mumbai, Maharashtra 400034
+      </p>
+
+      <br>
+
+      <p>
+        <strong>📞 Phone</strong><br>
+        022 6960 0111
+      </p>
+
+      <br>
+
+      <p>
+        <strong>🕐 Opening</strong><br>
+        Open · Closes 12 AM
+      </p>
+
+      <br>
+
+      <p>
+        Reservations required · Outdoor seating · Private dining room
+      </p>
+
+      <a class="button" href="tel:+912269600111">
+        CALL RESTAURANT
+      </a>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+<footer>
+
+  <p>© 2026 Gallops Restaurant</p>
+  <p>Mahalakshmi, Mumbai</p>
+
+</footer>
+
+</body>
+  </html>
